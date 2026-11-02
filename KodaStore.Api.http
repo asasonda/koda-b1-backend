@@ -1,0 +1,17 @@
+@baseUrl = http://localhost:5079
+
+GET {{baseUrl}}/api/v1/products
+Accept: application/json
+
+### post
+POST {{baseUrl}}/api/v1/products
+Accept: application/json
+Content-Type: application/json
+
+{
+    "productCode" : "P0001",
+    "name" : "Keyboard",
+    "price": 50000,
+    "stock": 10,
+    "category": "elektronik"
+}
