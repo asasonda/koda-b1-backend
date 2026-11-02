@@ -15,3 +15,16 @@ Content-Type: application/json
     "stock": 10,
     "category": "elektronik"
 }
+
+### Put
+PUT {{baseUrl}}/api/v1/products/P0001
+Accept: application/json
+Content-Type: application/json
+
+{
+    "productCode" : "P0001",
+    "name" : "Keyboard",
+    "price": 40000,
+    "stock": 5,
+    "category": "elektronik"
+}

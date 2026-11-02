@@ -21,8 +21,13 @@ public sealed class InMemoryProductCatalog
         _products.Add(products);
     }
 
-    public void UpdateProduct(Products products)
+    public void UpdateProduct(Products updateProduct, string productCode)
     {
-        
+        var product = _products.FirstOrDefault(product => string.Equals(product.ProductCode, productCode.Trim(), StringComparison.OrdinalIgnoreCase));
+        product?.ProductCode = updateProduct.ProductCode;
+        product?.Name = updateProduct.Name;
+        product?.Price = updateProduct.Price;
+        product?.Stock = updateProduct.Stock;
+        product?.Category = updateProduct.Category;
     }
 }

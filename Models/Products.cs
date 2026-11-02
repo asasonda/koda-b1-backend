@@ -2,11 +2,11 @@ namespace KodaStore.Api.Models;
 
 public sealed class Products
 {
-    public string ProductCode {get;}
-    public string Name {get;}
-    public decimal Price {get;}
-    public int Stock {get;}
-    public string Category {get;}
+    public string ProductCode {get; set;}
+    public string Name {get; set;}
+    public decimal Price {get; set;}
+    public int Stock {get; set;}
+    public string Category {get; set;}
 
     public Products(string productCode, string name, decimal price, int stock, string category)
     {

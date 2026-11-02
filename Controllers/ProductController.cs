@@ -63,4 +63,18 @@ public sealed class ProductController : ControllerBase
             routeValues: new{productCode = product.ProductCode}
         );
     }
+
+    [HttpPut("{productCode}")]
+    [ProducesResponseType(typeof(ProductResponse),StatusCodes.Status200OK )]
+    [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status404NotFound)]
+    public ActionResult<ProductResponse> Update([FromRoute] string productCode, [FromBody] ProductRequest request)
+    {
+        var product = new Products(request.ProductCode, request.Name, request.Price, request.Stock, request.Category);
+        _catalog.UpdateProduct(product, productCode);
+
+        return Ok(
+            "sip"
+        );
+
+    }
 }
